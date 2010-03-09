@@ -12,6 +12,11 @@ task :base do
   system("git clone git://github.com/tpope/vim-unimpaired.git bundles/unimpaired")
   system("git clone git://github.com/tpope/vim-abolish.git bundles/abolish")
   system("git clone git://github.com/tpope/vim-repeat.git bundles/repeat")
+
+  puts "Creating backup, tmp & tags dirs"
+  system("mkdir tmp")
+  system("mkdir backup")
+  system("mkdir tags")
 end
 
 desc "Performs git plugins installation"

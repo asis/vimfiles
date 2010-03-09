@@ -1,7 +1,9 @@
 tags
+tmp
+backup
 *~
 *.swp
-VimballRecord
+*VimballRecord
 bundles/endwise/*
 bundles/fugitive/*
 bundles/nerdcommenter/*
