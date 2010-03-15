@@ -4,6 +4,13 @@
 
 "Railscasts autumn color scheme
 colorscheme railscasts-autumn
+if has("gui_gnome")
+    set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
+endif
+
+"Remove visual bell
+set vb t_vb=
+set novisualbell
 
 "custom leader
 let mapleader="ñ"
@@ -28,9 +35,6 @@ set number
 set ruler
 set guioptions-=T
 
-"no more noise
-set vb t_vb=
-
 "CTAGS
 set tags=~/.vim//tags//
 
@@ -42,4 +46,6 @@ nnoremap <leader>f :FuzzyFinderTextMate<CR>
 nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
 nnoremap <leader>b :BufExplorer<cr>
 nnoremap <leader>f :FuzzyFinderTextMate<CR>
+nnoremap <leader>t :TlistToggle<CR>
+
 
