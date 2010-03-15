@@ -48,4 +48,23 @@ nnoremap <leader>b :BufExplorer<cr>
 nnoremap <leader>f :FuzzyFinderTextMate<CR>
 nnoremap <leader>t :TlistToggle<CR>
 
+"switching between windows
+inoremap <A-Left> <Esc><C-w><Left>
+nnoremap <A-Left> <C-w><Left>
+
+inoremap <A-Right> <Esc><C-w><Right>
+nnoremap <A-Right> <C-w><Right>
+
+inoremap <A-Up> <Esc><C-w><Up>
+nnoremap <A-Up> <C-w><Up>
+
+inoremap <A-Down> <Esc><C-w><Down>
+nnoremap <A-Down> <C-w><Down>
+
+"switching between tabs
+map <c-tab> :tabnext<cr>
+map <c-s-tab> :tabprevious<cr>
+
+imap <c-tab> <esc>:tabnext<cr>
+imap <c-s-tab> <esc>:tabprevious<cr>
 
