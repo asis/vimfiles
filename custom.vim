@@ -38,14 +38,15 @@ set guioptions-=T
 "CTAGS
 set tags=~/.vim//tags//
 
+"NERDTree customizations
+let NERDTreeChDirMode=2
+
 "reload vim config
 nmap <silent> <leader>rs :source ~/.vimrc<CR>
 
 "custom mappings
 nnoremap <leader>f :FuzzyFinderTextMate<CR>
 nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
-nnoremap <leader>b :BufExplorer<cr>
-nnoremap <leader>f :FuzzyFinderTextMate<CR>
 nnoremap <leader>t :TlistToggle<CR>
 
 "switching between windows
@@ -61,10 +62,15 @@ nnoremap <A-Up> <C-w><Up>
 inoremap <A-Down> <Esc><C-w><Down>
 nnoremap <A-Down> <C-w><Down>
 
+imap <D-Return> <Esc>o
+
 "switching between tabs
 map <c-tab> :tabnext<cr>
 map <c-s-tab> :tabprevious<cr>
 
 imap <c-tab> <esc>:tabnext<cr>
 imap <c-s-tab> <esc>:tabprevious<cr>
+
+"FuzzyFinderTextMate refresh
+nmap <silent> <D-r> :call system("ruby finder.rescan!")<CR>
 
