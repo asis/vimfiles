@@ -2,6 +2,9 @@
 " My VIM customizations
 "****************************
 
+" Don't update the display while executing macros
+set lazyredraw
+
 "Railscasts autumn color scheme
 colorscheme railscasts-autumn
 if has("gui_gnome")
@@ -27,6 +30,9 @@ set directory=~/.vim//tmp//
 "share clipboard
 set clipboard+=unnamed
 
+"add ack magic (currently not working on mac...)
+set grepprg=ack
+
 "editor UI fine tuning
 set cursorline
 set noerrorbells
@@ -41,8 +47,14 @@ set tags=~/.vim//tags//
 "NERDTree customizations
 let NERDTreeChDirMode=2
 
+"edit vimrc
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+
 "reload vim config
-nmap <silent> <leader>rs :source ~/.vimrc<CR>
+nmap <silent> <leader>sv :source ~/.vimrc<CR>
+
+"allow the cursor to go in to "invalid" places
+set virtualedit=all
 
 "custom mappings
 nnoremap <leader>f :FuzzyFinderTextMate<CR>
@@ -50,17 +62,18 @@ nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
 nnoremap <leader>t :TlistToggle<CR>
 
 "switching between windows
-inoremap <A-Left> <Esc><C-w><Left>
-nnoremap <A-Left> <C-w><Left>
 
-inoremap <A-Right> <Esc><C-w><Right>
-nnoremap <A-Right> <C-w><Right>
+inoremap <A-Left> <Esc>:wincmd h<cr>
+nnoremap <A-Left> :wincmd h<cr>
 
-inoremap <A-Up> <Esc><C-w><Up>
-nnoremap <A-Up> <C-w><Up>
+inoremap <A-Right> <Esc>:wincmd l<cr>
+nnoremap <A-Right> :wincmd l<cr>
 
-inoremap <A-Down> <Esc><C-w><Down>
-nnoremap <A-Down> <C-w><Down>
+inoremap <A-Up> <Esc>:wincmd k<cr>
+nnoremap <A-Up> :wincmd k<cr>
+
+inoremap <A-Down> <Esc>:wincmd j<cr>
+nnoremap <A-Down> :wincmd j<cr>
 
 imap <D-Return> <Esc>o
 
@@ -73,4 +86,3 @@ imap <c-s-tab> <esc>:tabprevious<cr>
 
 "FuzzyFinderTextMate refresh
 nmap <silent> <D-r> :call system("ruby finder.rescan!")<CR>
-
