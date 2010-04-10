@@ -7,8 +7,15 @@ set lazyredraw
 
 "Railscasts autumn color scheme
 colorscheme railscasts-autumn
-if has("gui_gnome")
-    set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
+if has("gui_running")
+    set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
+endif
+
+if !has("gui_mac")
+    nnoremap <Silent> <C-s> :w<CR>
+    inoremap <Silent> <C-s> <Esc>:w<CR>a
+    nnoremap <Silent> <C-w> :q<CR>
+    inoremap <Silent> <C-w> <Esc>:q<CR>
 endif
 
 "Remove visual bell
