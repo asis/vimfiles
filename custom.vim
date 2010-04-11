@@ -2,28 +2,16 @@
 " My VIM customizations
 "****************************
 
-" Don't update the display while executing macros
+"Don't update the display while executing macros
 set lazyredraw
 
 "Railscasts autumn color scheme
 colorscheme railscasts-autumn
-if has("gui_running")
-    set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
-endif
-
-if !has("gui_mac")
-    nnoremap <Silent> <C-s> :w<CR>
-    inoremap <Silent> <C-s> <Esc>:w<CR>a
-    nnoremap <Silent> <C-w> :q<CR>
-    inoremap <Silent> <C-w> <Esc>:q<CR>
-endif
 
 "Remove visual bell
 set vb t_vb=
 set novisualbell
 
-"custom leader
-let mapleader="ñ"
 
 "enable omnicompletion
 set ofu=syntaxcomplete#Complete
@@ -68,21 +56,6 @@ nnoremap <leader>f :FuzzyFinderTextMate<CR>
 nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
 nnoremap <leader>t :TlistToggle<CR>
 
-"switching between windows
-
-inoremap <A-Left> <Esc>:wincmd h<cr>
-nnoremap <A-Left> :wincmd h<cr>
-
-inoremap <A-Right> <Esc>:wincmd l<cr>
-nnoremap <A-Right> :wincmd l<cr>
-
-inoremap <A-Up> <Esc>:wincmd k<cr>
-nnoremap <A-Up> :wincmd k<cr>
-
-inoremap <A-Down> <Esc>:wincmd j<cr>
-nnoremap <A-Down> :wincmd j<cr>
-
-imap <D-Return> <Esc>o
 
 "switching between tabs
 map <c-tab> :tabnext<cr>
@@ -93,3 +66,11 @@ imap <c-s-tab> <esc>:tabprevious<cr>
 
 "FuzzyFinderTextMate refresh
 nmap <silent> <D-r> :call system("ruby finder.rescan!")<CR>
+
+"Load OS dependent customizations
+if has("mac")
+    source ~/.vim/custom-mac.vim
+elseif has("unix")
+    source ~/.vim/custom-linux.vim
+endif
+
