@@ -1,5 +1,5 @@
 if has("gui")
-    set guifont=Bitstream\ Vera\ Sans\ Mono:h14.0
+    set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
 endif
 
 nnoremap <Silent> <C-s> :w<CR>
