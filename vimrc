@@ -216,8 +216,7 @@ if has("gui_running")
     set t_Co=256
 
     if has("gui_gnome")
-        set term=gnome-256color
-        colorscheme twilight
+       colorscheme twilight
     else
         colorscheme twilight
         set guitablabel=%M%t

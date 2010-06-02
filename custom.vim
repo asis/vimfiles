@@ -26,7 +26,7 @@ set directory=~/.vim//tmp//
 set clipboard+=unnamed
 
 "add ack magic (currently not working on mac...)
-set grepprg=ack
+set grepprg=ack-grep
 
 "editor UI fine tuning
 set cursorline
@@ -37,7 +37,7 @@ set ruler
 set guioptions-=T
 
 "CTAGS
-set tags=~/.vim//tags//
+set tags=~/code/tags
 
 "NERDTree customizations
 let NERDTreeChDirMode=2
