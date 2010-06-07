@@ -48,13 +48,12 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 "reload vim config
 nmap <silent> <leader>sv :source ~/.vimrc<CR>
 
-"allow the cursor to go in to "invalid" places
-set virtualedit=all
-
 "custom mappings
 nnoremap <leader>f :FuzzyFinderTextMate<CR>
 nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
 nnoremap <leader>t :TlistToggle<CR>
+nnoremap <c-s> :w<CR>
+inoremap <c-s> <Esc>:w<CR>a
 
 
 "switching between tabs
