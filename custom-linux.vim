@@ -19,3 +19,4 @@ nnoremap <silent> <A-Up> :wincmd k<cr>
 
 inoremap <silent> <A-Down> <Esc>:wincmd j<cr>
 nnoremap <silent> <A-Down> :wincmd j<cr>
+

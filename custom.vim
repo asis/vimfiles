@@ -50,11 +50,15 @@ nmap <silent> <leader>sv :source ~/.vimrc<CR>
 
 "custom mappings
 nnoremap <leader>f :FuzzyFinderTextMate<CR>
+nnoremap <leader>b :FuzzyFinderBuffer<CR>
 nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
 nnoremap <leader>t :TlistToggle<CR>
 nnoremap <c-s> :w<CR>
-inoremap <c-s> <Esc>:w<CR>a
-
+inoremap <c-s> <Esc>:w<CR>
+cmap :W<CR> :w<CR>
+inoremap <A-i> <Esc>
+vnoremap <Tab> >>
+vnoremap <s-Tab> <<
 
 "switching between tabs
 map <c-tab> :tabnext<cr>
@@ -64,7 +68,19 @@ imap <c-tab> <esc>:tabnext<cr>
 imap <c-s-tab> <esc>:tabprevious<cr>
 
 "FuzzyFinderTextMate refresh
-nmap <silent> <D-r> :call system("ruby finder.rescan!")<CR>
+nmap <silent> <leader>r :call system("ruby finder.rescan!")<CR>
+
+"Auto-reload firefox window on save. Use with MozRepl
+autocmd BufWriteCmd *.html,*.css,*.erb :call Refresh_firefox()
+function! Refresh_firefox()
+    write
+    silent !echo  'vimYo = content.window.pageYOffset;
+                 \ vimXo = content.window.pageXOffset;
+                 \ BrowserReload();
+                 \ content.window.scrollTo(vimXo,vimYo);
+                 \ repl.quit();'  |
+                 \ nc localhost 4242 2>&1 > /dev/null
+endfunction
 
 "Load OS dependent customizations
 if has("mac")
