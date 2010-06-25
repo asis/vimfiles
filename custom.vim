@@ -56,7 +56,6 @@ nnoremap <leader>t :TlistToggle<CR>
 nnoremap <c-s> :w<CR>
 inoremap <c-s> <Esc>:w<CR>
 cmap :W<CR> :w<CR>
-inoremap <A-i> <Esc>
 vnoremap <Tab> >>
 vnoremap <s-Tab> <<
 
