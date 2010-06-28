@@ -88,3 +88,5 @@ elseif has("unix")
     source ~/.vim/custom-linux.vim
 endif
 
+"write as su
+command SudoW w !sudo tee % >/dev/null
