@@ -89,4 +89,4 @@ elseif has("unix")
 endif
 
 "write as su
-command SudoW w !sudo tee % >/dev/null
+command! SudoW w !sudo tee % >/dev/null
