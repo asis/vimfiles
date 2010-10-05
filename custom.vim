@@ -90,3 +90,6 @@ endif
 
 "write as su
 command! SudoW w !sudo tee % >/dev/null
+
+"visual select most recently edited text
+nmap gV `[v`]
