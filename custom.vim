@@ -70,16 +70,16 @@ imap <c-s-tab> <esc>:tabprevious<cr>
 nmap <silent> <leader>r :call system("ruby finder.rescan!")<CR>
 
 "Auto-reload firefox window on save. Use with MozRepl
-autocmd BufWriteCmd *.html,*.css,*.erb :call Refresh_firefox()
-function! Refresh_firefox()
-    write
-    silent !echo  'vimYo = content.window.pageYOffset;
-                 \ vimXo = content.window.pageXOffset;
-                 \ BrowserReload();
-                 \ content.window.scrollTo(vimXo,vimYo);
-                 \ repl.quit();'  |
-                 \ nc localhost 4242 2>&1 > /dev/null
-endfunction
+"autocmd BufWriteCmd *.html,*.css,*.erb :call Refresh_firefox()
+"function! Refresh_firefox()
+    "write
+    "silent !echo  'vimYo = content.window.pageYOffset;
+                 "\ vimXo = content.window.pageXOffset;
+                 "\ BrowserReload();
+                 "\ content.window.scrollTo(vimXo,vimYo);
+                 "\ repl.quit();'  |
+                 "\ nc localhost 4242 2>&1 > /dev/null
+"endfunction
 
 "Load OS dependent customizations
 if has("mac")
@@ -93,3 +93,9 @@ command! SudoW w !sudo tee % >/dev/null
 
 "visual select most recently edited text
 nmap gV `[v`]
+
+"command-t mapping
+nnoremap <silent> <leader>t <Esc>:CommandT<CR>
+
+"Add some files to the ignore list
+set wildignore+=*.class,.git/**,.svn/**,target/**
