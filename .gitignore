@@ -20,7 +20,4 @@ bundles/vim-rails/*
 bundles/vim-ruby/*
 bundles/abolish/*
 bundles/repeat/*
-bundles/command-t/ruby/command-t/*.o
-bundles/command-t/ruby/command-t/*.so
-bundles/command-t/ruby/command-t/*.log
-bundles/command-t/ruby/command-t/Makefile
+bundles/command-t/ruby/command-t/*
