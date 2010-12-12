@@ -64,6 +64,9 @@ map <c-s-tab> :tabprevious<cr>
 imap <c-tab> <esc>:tabnext<cr>
 imap <c-s-tab> <esc>:tabprevious<cr>
 
+"CommandT switch
+nnoremap <silent> <leader>t :CommandT<CR>
+
 "Load OS dependent customizations
 if has("mac")
     source ~/.vim/custom-mac.vim
@@ -76,9 +79,6 @@ command! SudoW w !sudo tee % >/dev/null
 
 "visual select most recently edited text
 nmap gV `[v`]
-
-"command-t mapping
-nnoremap <silent> <leader>t <Esc>:CommandT<CR>
 
 "Add some files to the ignore list
 set wildignore+=*.class,.git/**,.svn/**,target/**
